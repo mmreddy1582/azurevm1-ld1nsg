@@ -2,7 +2,7 @@ output "vm_ids" {
   description = "Virtual machine ids created."
   value       = azurerm_virtual_machine.vm-linux.*.id
 }
-###Commented out for nsg permission issue 
+###Commented out for nsg permission issue on 26th October 2020 
 /*
 output "network_security_group_id" {
   description = "id of the security group provisioned"

@@ -158,7 +158,7 @@ resource "azurerm_network_interface" "vm" {
   tags = var.tags
 }
 
-###Commented out for nsg permission issue 
+###Commented out for nsg permission issue on 26th October 2020
 /*resource "azurerm_network_interface_security_group_association" "test" {
   count                     = var.nb_instances
   network_interface_id      = azurerm_network_interface.vm[count.index].id
