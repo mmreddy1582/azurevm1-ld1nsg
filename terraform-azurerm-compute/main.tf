@@ -165,3 +165,17 @@ resource "azurerm_network_interface" "vm" {
   network_security_group_id = azurerm_network_security_group.vm.id
 }
 */
+
+resource "azurerm_virtual_machine_extension" "example" {
+  name                 = var.vm_hostname
+  virtual_machine_id   = azurerm_virtual_machine.vm-linux.id
+  publisher            = "Microsoft.Azure.Extensions"
+  type                 = "CustomScript"
+  type_handler_version = "2.0"
+
+  settings = <<SETTINGS
+    {
+        "commandToExecute": "sudo yum update -y"
+    }
+SETTINGS
+}
