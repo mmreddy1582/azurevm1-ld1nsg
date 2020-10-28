@@ -159,6 +159,7 @@ resource "azurerm_network_interface" "vm" {
 }
 
 ###Commented out for nsg permission issue on 26th October 2020
+###this one also no need if subnet have already one subnet
 /*resource "azurerm_network_interface_security_group_association" "test" {
   count                     = var.nb_instances
   network_interface_id      = azurerm_network_interface.vm[count.index].id
