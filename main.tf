@@ -11,7 +11,7 @@ resource "azurerm_resource_group" "example" {
 module "linuxservers" {
   source                        = "./terraform-azurerm-compute"
   resource_group_name           = azurerm_resource_group.example.name
-  vm_hostname                   = "vmsspocrhelvm"
+  vm_hostname                   = "vmsspocvm1"
   nb_public_ip                  = 0
   remote_port                   = "22"
   nb_instances                  = 1
@@ -29,8 +29,9 @@ module "linuxservers" {
   vm_size                       = "Standard_D4s_v3"
   
   tags = {
-    environment = "dev"
-    costcenter  = "it"
+    environment = "poc"
+    costcenter  = "SG010076"
+    owner       = "Muragaiah/Wen Qing"
   }
 
   enable_accelerated_networking = true
