@@ -31,6 +31,7 @@ module "linuxservers" {
   tags = {
     environment = "poc"
     costcenter  = "SG010076"
+    application = "ismart"
     owner       = "Muragaiah/Wen Qing"
   }
 
