@@ -4,14 +4,14 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "vmsspoc-rg1"
+  name     = "vmsspoc-rg2"
   location = "Southeast Asia"
 }
 
 module "linuxservers" {
   source                        = "./terraform-azurerm-compute"
   resource_group_name           = azurerm_resource_group.example.name
-  vm_hostname                   = "vmsspocvm1"
+  vm_hostname                   = "vmsspocvm2"
   nb_public_ip                  = 0
   remote_port                   = "22"
   nb_instances                  = 1
